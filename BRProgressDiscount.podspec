@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'BRProgressDiscount'
-  s.version          = '0.0.3'
+  s.version          = '0.0.4'
   s.summary          = '折扣进度'
 
   # This description is used to generate tags and improve search results.
@@ -26,8 +26,8 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/burning-git/BRProgressDiscountView.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '9.0'
-  s.swift_version = '4.0'
+  s.platform     = :ios, "9.0"
+  s.swift_version = '4.2'
   s.source_files = 'BRProgressDiscountViewProject/BRProgressDiscountView/**/*'
   
   # s.resource_bundles = {
