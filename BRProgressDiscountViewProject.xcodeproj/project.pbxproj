@@ -12,6 +12,7 @@
 		66E8C0D522CB690500789B7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66E8C0D322CB690500789B7C /* Main.storyboard */; };
 		66E8C0D722CB690700789B7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66E8C0D622CB690700789B7C /* Assets.xcassets */; };
 		66E8C0DA22CB690700789B7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66E8C0D822CB690700789B7C /* LaunchScreen.storyboard */; };
+		66E8C0E322CB69A000789B7C /* BRProgressDiscountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E8C0E222CB69A000789B7C /* BRProgressDiscountView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		66E8C0D622CB690700789B7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		66E8C0D922CB690700789B7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		66E8C0DB22CB690700789B7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66E8C0E222CB69A000789B7C /* BRProgressDiscountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRProgressDiscountView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		66E8C0CE22CB690500789B7C /* BRProgressDiscountViewProject */ = {
 			isa = PBXGroup;
 			children = (
+				66E8C0E122CB698C00789B7C /* BRProgressDiscountView */,
 				66E8C0CF22CB690500789B7C /* AppDelegate.swift */,
 				66E8C0D122CB690500789B7C /* ViewController.swift */,
 				66E8C0D322CB690500789B7C /* Main.storyboard */,
@@ -62,6 +65,14 @@
 				66E8C0DB22CB690700789B7C /* Info.plist */,
 			);
 			path = BRProgressDiscountViewProject;
+			sourceTree = "<group>";
+		};
+		66E8C0E122CB698C00789B7C /* BRProgressDiscountView */ = {
+			isa = PBXGroup;
+			children = (
+				66E8C0E222CB69A000789B7C /* BRProgressDiscountView.swift */,
+			);
+			path = BRProgressDiscountView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +148,7 @@
 			files = (
 				66E8C0D222CB690500789B7C /* ViewController.swift in Sources */,
 				66E8C0D022CB690500789B7C /* AppDelegate.swift in Sources */,
+				66E8C0E322CB69A000789B7C /* BRProgressDiscountView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
