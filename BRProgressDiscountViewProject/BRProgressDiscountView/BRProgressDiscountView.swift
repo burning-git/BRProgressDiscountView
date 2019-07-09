@@ -10,7 +10,7 @@ import UIKit
 
 public class BRProgressDiscountView: UIView {
 
-    var eEdgeInset:UIEdgeInsets = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 40)
+    public var eEdgeInset:UIEdgeInsets = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 40)
     private var mProgressView:UIView!
     private var mProgressBgView:UIView!
     fileprivate var mDataArray:[BRItemObject]?
@@ -18,7 +18,7 @@ public class BRProgressDiscountView: UIView {
     //进度节点⭕️views
     fileprivate var mItemCircleViewList:[BRItemCircleView]?
     //超过总进度，追加宽度
-    var overProgressWidth:CGFloat = 0 {
+    public var overProgressWidth:CGFloat = 0 {
         didSet{
             if overProgressWidth > 0 {
                 if mOverProgressBgView == nil {
@@ -35,22 +35,22 @@ public class BRProgressDiscountView: UIView {
         }
     }
     /// 进度颜色
-    var mProgressingColor:UIColor = UIColor.orange {
+    public var mProgressingColor:UIColor = UIColor.orange {
         didSet{
             mProgressView.backgroundColor = mProgressingColor
         }
     }
     /// 进度背景颜色
-    var mProgressBgColor:UIColor = UIColor.gray {
+    public var mProgressBgColor:UIColor = UIColor.gray {
         didSet{
             mProgressBgView.backgroundColor = mProgressBgColor
             mOverProgressBgView?.backgroundColor = mProgressBgColor
         }
     }
     /// 当前进度
-    var mProgress:CGFloat = 0.4
+    public var mProgress:CGFloat = 0.4
     //进度显示
-    var mPopProgressView:BRTopProgressView?
+    public var mPopProgressView:BRTopProgressView?
     
     //是否忽略折点宽度，作为进度
     var mIgnoreInfectionPointWidth:Bool = false
@@ -101,7 +101,7 @@ public class BRProgressDiscountView: UIView {
     /// 更新进度列表
     ///
     /// - Parameter list: <#list description#>
-    func br_updateListData(list:[BRItemObject]?) {
+    public func br_updateListData(list:[BRItemObject]?) {
         if (list?.count ?? 0 ) > 0 {
             _ = self.subviews.compactMap({($0 as? BRItemCircleView)?.removeFromSuperview()})
             mDataArray = list
@@ -122,7 +122,7 @@ public class BRProgressDiscountView: UIView {
     /// 更新进度
     ///
     /// - Parameter progress: <#progress description#>
-    func br_updateProgress(progress:CGFloat) {
+    public func br_updateProgress(progress:CGFloat) {
         mProgress = progress
         if progress >= 1 {
             self.mOverProgressBgView?.mProgress = 0.3
@@ -314,10 +314,10 @@ public class BRProgressDiscountView: UIView {
             }
         }
         
-        var mUpLabel:UILabel?
-        var mDownLabel:UILabel?
-        var mMiddleLabel:UILabel?
-        var mItemInfoModel:BRItemObject?{
+        public var mUpLabel:UILabel?
+        public var mDownLabel:UILabel?
+        public var mMiddleLabel:UILabel?
+        public var mItemInfoModel:BRItemObject?{
             didSet{
                 mUpLabel?.text = mItemInfoModel?.up_name
                 mDownLabel?.text = mItemInfoModel?.down_name
