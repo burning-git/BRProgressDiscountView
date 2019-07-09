@@ -53,7 +53,7 @@ public class BRProgressDiscountView: UIView {
     public var mPopProgressView:BRTopProgressView?
     
     //是否忽略折点宽度，作为进度
-    var mIgnoreInfectionPointWidth:Bool = false
+    public var mIgnoreInfectionPointWidth:Bool = false
     
     public override  func awakeFromNib() {
         super.awakeFromNib()
@@ -134,7 +134,7 @@ public class BRProgressDiscountView: UIView {
     /// 获取 进度item model
     ///
     /// - Returns: <#return value description#>
-    class func br_getProgressItemModel() -> BRItemObject {
+   public class func br_getProgressItemModel() -> BRItemObject {
         let temp = BRItemObject()
         return temp
     }
@@ -268,32 +268,32 @@ public class BRProgressDiscountView: UIView {
     */
     
     public  class BRItemObject {
-        var item_count:CGFloat = 0
-        var up_name:String? = "8折"
-        var down_name:String? = "1000件"
-        var item_progress:CGFloat = 0
-        var name:String? = "8折"
-        var mSelectedImg:UIImage?
-        var mTag:Int = 0;
-        var mPointPoztion:NSTextAlignment = .center
-        var itemSize:CGSize = CGSize(width: 30, height: 30)
+       public var item_count:CGFloat = 0
+       public var up_name:String? = "8折"
+       public var down_name:String? = "1000件"
+       public var item_progress:CGFloat = 0
+       public var name:String? = "8折"
+       public var mSelectedImg:UIImage?
+       public var mTag:Int = 0;
+       public var mPointPoztion:NSTextAlignment = .center
+       public var itemSize:CGSize = CGSize(width: 30, height: 30)
         
-        var text_config:BRItemLabelConfigObject? = BRItemLabelConfigObject()
-        var up_config:BRItemLabelConfigObject? = BRItemLabelConfigObject()
-        var down_config:BRItemLabelConfigObject? = BRItemLabelConfigObject()
+       public var text_config:BRItemLabelConfigObject? = BRItemLabelConfigObject()
+       public var up_config:BRItemLabelConfigObject? = BRItemLabelConfigObject()
+       public var down_config:BRItemLabelConfigObject? = BRItemLabelConfigObject()
 
         
     }
     public class BRItemLabelConfigObject{
-        var text_color:UIColor? = UIColor.black
-        var text_font_size:CGFloat = 12
+       public var text_color:UIColor? = UIColor.black
+       public var text_font_size:CGFloat = 12
     }
     //进度节点view
     public class BRItemCircleView: UIView {
         
         private let kSelectedImgTag = 10
         
-        var mSelectedImgView:UIImageView?
+        public var mSelectedImgView:UIImageView?
         {
             get{
                 let temp = self.viewWithTag(kSelectedImgTag)
@@ -307,7 +307,7 @@ public class BRProgressDiscountView: UIView {
                 return temp as? UIImageView
             }
         }
-        var mSelected:Bool = false {
+        public var mSelected:Bool = false {
             didSet{
                 mSelectedImgView?.isHidden = !mSelected
                 mSelectedImgView?.image = mItemInfoModel?.mSelectedImg
@@ -404,13 +404,13 @@ public class BRProgressDiscountView: UIView {
     
     public class BRTopProgressView: UIView {
         
-        enum TriangleDirection {
+       public enum TriangleDirection {
             case left
             case middle
             case right
         }
-        var mTextLabel:UILabel?
-        var mTextEdageInset:UIEdgeInsets = UIEdgeInsets.zero {
+       public var mTextLabel:UILabel?
+       public var mTextEdageInset:UIEdgeInsets = UIEdgeInsets.zero {
             didSet {
                 guard let temp_text_label = mTextLabel else {
                     return
@@ -456,10 +456,10 @@ public class BRProgressDiscountView: UIView {
         }
        
         //三角形
-        var mArrowView:UIView?
-        var mButtomTriangleView:BRTriangleView?
+       public  var mArrowView:UIView?
+       public var mButtomTriangleView:BRTriangleView?
         //箭头方向,左、中、右
-        var mDirection:TriangleDirection = .left {
+       public var mDirection:TriangleDirection = .left {
             didSet{
                 if let triangView = mButtomTriangleView {
                     let triang_list = self.constraints.filter({($0.firstItem as? BRTriangleView) == triangView})
@@ -489,13 +489,13 @@ public class BRProgressDiscountView: UIView {
             }
         }
         
-        var mBackgroundColor: UIColor?{
+       public var mBackgroundColor: UIColor?{
             didSet{
                 mButtomTriangleView?.mBackgroundColor = mBackgroundColor
             }
         }
         
-        var mBgView:UIView!
+       public var mBgView:UIView!
         
         public override init(frame: CGRect) {
             super.init(frame: frame)
@@ -544,25 +544,25 @@ public class BRProgressDiscountView: UIView {
         required init?(coder aDecoder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
         }
-        class BRTriangleView: UIView {
-            enum ArrowDirection {
+       public class BRTriangleView: UIView {
+          public  enum ArrowDirection {
                 case buttomLeft
                 case buttomCenter
                 case buttomRight
             }
-            var mDirection:ArrowDirection = .buttomLeft {
+           public var mDirection:ArrowDirection = .buttomLeft {
                 didSet{
                     self.setNeedsLayout()
                 }
             }
-            var mBackgroundColor: UIColor? {
+           public var mBackgroundColor: UIColor? {
                 didSet{
                     self.setNeedsLayout()
                 }
             }
             private lazy var linePath : UIBezierPath = UIBezierPath()
             private lazy var lineShape : CAShapeLayer = CAShapeLayer()
-            override init(frame: CGRect) {
+            public override init(frame: CGRect) {
                 super.init(frame: frame)
                 lineShape.path = linePath.cgPath
                 self.layer.addSublayer(lineShape)
@@ -571,7 +571,7 @@ public class BRProgressDiscountView: UIView {
             required init?(coder aDecoder: NSCoder) {
                 fatalError("init(coder:) has not been implemented")
             }
-            override func layoutSubviews() {
+            public  override  func layoutSubviews() {
                 super.layoutSubviews()
                 let all_size = self.bounds.size
                 let startPoint = CGPoint(x: 0, y: 0)
@@ -603,7 +603,7 @@ extension UIView {
     ///
     /// - Parameter radii: <#radii description#>
     /// - Returns: <#return value description#>
-    func br_addCustomerCorner(radii:CGFloat,type:BRProgressDiscountView.BRTopProgressView.TriangleDirection) -> CALayer {
+   public func br_addCustomerCorner(radii:CGFloat,type:BRProgressDiscountView.BRTopProgressView.TriangleDirection) -> CALayer {
         if self.layer.mask != nil {
             self.layer.mask = nil
         }
